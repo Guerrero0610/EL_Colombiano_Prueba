@@ -23,7 +23,7 @@ namespace CRUD_El_Colombiano.Controllers
         }
 
         [HttpGet]
-        public IActionResult PersonaInteDetalle(int idPErsona)
+        public IActionResult PersonaInteDetalle(int ID)
         {
             ClienteVM oPersonaVM = new ClienteVM(){
                 oPersona = new PersonasInteresada(),
@@ -36,9 +36,9 @@ namespace CRUD_El_Colombiano.Controllers
 
             };
 
-            if(idPErsona != 0)
+            if(ID != 0)
             {
-                oPersonaVM.oPersona = _DBContext.PersonasInteresadas.Find(idPErsona);
+                oPersonaVM.oPersona = _DBContext.PersonasInteresadas.Find(ID);
             }
            
 
@@ -51,6 +51,10 @@ namespace CRUD_El_Colombiano.Controllers
             if(oPersonaVM.oPersona.Id == 0)
             {
                 _DBContext.PersonasInteresadas.Add(oPersonaVM.oPersona);
+            }
+            else
+            {
+                _DBContext.PersonasInteresadas.Update(oPersonaVM.oPersona); 
             }
 
             _DBContext.SaveChanges();
