@@ -17,5 +17,7 @@ public partial class PersonasInteresada
 
     public int? ProyectoDeInteres { get; set; }
 
+    public DateTime FechaRegistro { get; set; }
+
     public virtual Proyecto? ProyectoDeInteresNavigation { get; set; }
 }
