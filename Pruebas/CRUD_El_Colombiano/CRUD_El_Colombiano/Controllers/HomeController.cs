@@ -85,5 +85,46 @@ namespace CRUD_El_Colombiano.Controllers
             List<Proyecto> Lista = _DBContext.Proyectos.ToList();
             return View(Lista);
         }
+
+        [HttpGet]
+        public IActionResult ProyectoInteDetalle(int idPersonaInt)
+        {
+            ClienteVM oPersonaVM = new ClienteVM()
+            {
+                oPersona = new PersonasInteresada(),
+                oLista = _DBContext.Proyectos.Select(proyec => new SelectListItem()
+                {
+                    Text = proyec.Codigo.ToString(),
+                    Value = proyec.Codigo.ToString()
+
+                }).ToList()
+
+            };
+
+            if (idPersonaInt != 0)
+            {
+                oPersonaVM.oPersona = _DBContext.PersonasInteresadas.Find(idPersonaInt);
+            }
+
+
+            return View(oPersonaVM);
+        }
+
+        [HttpPost]
+        public IActionResult ProyectoInteDetalle(ClienteVM oPersonaVM)
+        {
+            if (oPersonaVM.oPersona.Id == 0)
+            {
+                _DBContext.PersonasInteresadas.Add(oPersonaVM.oPersona);
+            }
+            else
+            {
+                _DBContext.PersonasInteresadas.Update(oPersonaVM.oPersona);
+            }
+
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

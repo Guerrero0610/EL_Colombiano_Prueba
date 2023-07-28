@@ -2,5 +2,6 @@
 {
     public class ProyectoVM
     {
+        public Proyecto oProyecto { get; set; }
     }
 }
