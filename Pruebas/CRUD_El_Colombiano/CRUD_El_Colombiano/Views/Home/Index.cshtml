@@ -14,15 +14,15 @@
         <h5>Lista de Personas Insteresadas</h5>
     </div>
     <div class="card-body">
-        <a class="btn btn-success btn-sm" asp-action="PersonaInteDetalle" asp-controller="Home" asp-route-idPersonaInt="0">Nuevo</a>
-        <a class="btn btn-success btn-sm" asp-action="Ver_Proyectos" asp-controller="Home" asp-route-idPersonaInt="0">Ver Proyectos Disponibles</a>
-
+        
         <form asp-controller="Home" asp-action="Index">
             <p>
                 Buscar: <input type="text" name="Buscar" id="txtBuscar" class="form-text" />
                 <input type="submit" value="Buscar" class="btn btn-sm btn-dark" />
                 <button type="button" class="btn btn-sm btn-secondary" id="btnMostrarTodo">Mostrar Todo</button>
             </p>
+            <a class="btn btn-success btn-sm" asp-action="PersonaInteDetalle" asp-controller="Home" asp-route-idPersonaInt="0">Nuevo</a>
+            <a class="btn btn-success btn-sm" asp-action="Ver_Proyectos" asp-controller="Home" asp-route-idPersonaInt="0">Ver Proyectos Disponibles</a>
         </form>
 
         <script>
@@ -30,8 +30,6 @@
                 window.location.href = '/Home/Index';
             });
         </script>
-
-       
 
         <hr />
         <table class="table table-striped">
