@@ -4,9 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-<h1>Crear Nuevo Proyecto</h1>
+@if (Model.oProyecto.Codigo != 0)
+{
+    <h1>Crear Nuevo Proyecto</h1>
+}
+else
+{
+    <h1>Editar Proyecto</h1>
+}
 
 <div class="row">
     <div class="col-sm-4">
