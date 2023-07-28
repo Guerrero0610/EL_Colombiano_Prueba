@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRUD_El_Colombiano.Models;
 
-public class PersonasInteresada: ValidationAttribute
+public partial class PersonasInteresada: ValidationAttribute
 {
     public int Id { get; set; }
 
