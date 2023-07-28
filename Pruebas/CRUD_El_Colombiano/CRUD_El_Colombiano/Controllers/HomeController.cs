@@ -117,7 +117,7 @@ namespace CRUD_El_Colombiano.Controllers
 
             _DBContext.SaveChanges();
 
-            return RedirectToAction("Ver_Proyectos");
+            return RedirectToAction("Ver_Proyectos", "Home");
         }
 
         [HttpGet]
@@ -134,7 +134,7 @@ namespace CRUD_El_Colombiano.Controllers
             _DBContext.Proyectos.Remove(oProyectos);
             _DBContext.SaveChanges();
 
-            return RedirectToAction("Ver_Proyectos");
+            return RedirectToAction("Ver_Proyectos", "Home");
         }
     }
 }
