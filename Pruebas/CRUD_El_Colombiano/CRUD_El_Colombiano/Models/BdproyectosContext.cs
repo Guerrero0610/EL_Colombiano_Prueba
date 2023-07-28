@@ -15,6 +15,7 @@ public partial class BdproyectosContext : DbContext
     {
     }
 
+    public DbSet<PersonasInteresada> FechaRegistro { get; set; }
     public virtual DbSet<PersonasInteresada> PersonasInteresadas { get; set; }
 
     public virtual DbSet<Proyecto> Proyectos { get; set; }
