@@ -104,15 +104,15 @@ namespace CRUD_El_Colombiano.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProyectoInteDetalle(ClienteVM oProyectoVM)
+        public IActionResult ProyectoInteDetalle(ProyectoVM oProyectoVM)
         {
-            if (oProyectoVM.oPersona.Id == 0)
+            if (oProyectoVM.oProyecto.Codigo == 0)
             {
-                _DBContext.Proyectos.Add(oProyectoVM.oPersona);
+                _DBContext.Proyectos.Add(oProyectoVM.oProyecto);
             }
             else
             {
-                _DBContext.Proyectos.Update(oProyectoVM.oPersona);
+                _DBContext.Proyectos.Update(oProyectoVM.oProyecto);
             }
 
             _DBContext.SaveChanges();
