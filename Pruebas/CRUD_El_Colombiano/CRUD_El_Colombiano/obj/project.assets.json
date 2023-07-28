@@ -11242,11 +11242,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SGVillarreal\\source\\repos\\CRUD_El_Colombiano\\CRUD_El_Colombiano\\CRUD_El_Colombiano.csproj",
+      "projectUniqueName": "C:\\Users\\SGVillarreal\\Documents\\GitHub\\EL_Colombiano_Prueba\\Pruebas\\CRUD_El_Colombiano\\CRUD_El_Colombiano\\CRUD_El_Colombiano.csproj",
       "projectName": "CRUD_El_Colombiano",
-      "projectPath": "C:\\Users\\SGVillarreal\\source\\repos\\CRUD_El_Colombiano\\CRUD_El_Colombiano\\CRUD_El_Colombiano.csproj",
+      "projectPath": "C:\\Users\\SGVillarreal\\Documents\\GitHub\\EL_Colombiano_Prueba\\Pruebas\\CRUD_El_Colombiano\\CRUD_El_Colombiano\\CRUD_El_Colombiano.csproj",
       "packagesPath": "C:\\Users\\SGVillarreal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SGVillarreal\\source\\repos\\CRUD_El_Colombiano\\CRUD_El_Colombiano\\obj\\",
+      "outputPath": "C:\\Users\\SGVillarreal\\Documents\\GitHub\\EL_Colombiano_Prueba\\Pruebas\\CRUD_El_Colombiano\\CRUD_El_Colombiano\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
