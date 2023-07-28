@@ -46,6 +46,12 @@ else
                 </select>
             </div>
 
+            <div class="form-group">
+                <label asp-for="oPersona.FechaRegistro">Fecha de Registro:</label>
+                <input asp-for="oPersona.FechaRegistro" class="form-control" />
+                <span asp-validation-for="oPersona.FechaRegistro" class="text-danger"></span>
+            </div>
+
             <div class="mb-2">
 
                 @if (Model.oPersona.Id == 0)
