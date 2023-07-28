@@ -32,31 +32,12 @@
         </form>
 
         <script>
-            // Inicializar el autocompletar usando jQuery UI Autocomplete
-            $(document).ready(function () {
-                $("#txtBuscar").autocomplete({
-                    source: function (request, response) {
-                        $.ajax({
-                            url: "/Home/Autocompletar",
-                            type: "GET",
-                            dataType: "json",
-                            data: {
-                                searchTerm: request.term
-                            },
-                            success: function (data) {
-                                response(data);
-                            }
-                        });
-                    },
-                    minLength: 3 // Número mínimo de caracteres para iniciar la búsqueda
-                });
-
-                // Evento para manejar el clic en el botón "Mostrar Todo"
-                $("#btnMostrarTodo").click(function () {
-                    window.location.href = '/Home/Index';
-                });
+            document.getElementById("btnMostrarTodo").addEventListener("click", function () {
+                window.location.href = '/Home/Index';
             });
         </script>
+
+       
 
         <hr />
         <table class="table table-striped">

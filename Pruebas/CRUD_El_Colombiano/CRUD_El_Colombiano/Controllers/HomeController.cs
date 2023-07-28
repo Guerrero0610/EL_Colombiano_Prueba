@@ -28,17 +28,17 @@ namespace CRUD_El_Colombiano.Controllers
             return View(personasInte);
         }
 
+
+
         [HttpGet]
-        public IActionResult Autocompletar(string BuscarNom)
+        public IActionResult Suggestions(string term)
         {
-            // Realizar la lógica para obtener las sugerencias de autocompletado desde la base de datos
-            // Se usa LINQ para filtrar los resultados según el término de búsqueda
-            var sugerencias = _DBContext.PersonasInteresadas
-                .Where(s => s.Nombre != null && s.Nombre.Contains(BuscarNom))
+            var personasInte = _DBContext.PersonasInteresadas
+                .Where(s => s.Nombre != null && s.Nombre.Contains(term))
                 .Select(s => s.Nombre)
                 .ToList();
 
-            return Json(sugerencias);
+            return Ok(personasInte);
         }
 
         [HttpGet]
