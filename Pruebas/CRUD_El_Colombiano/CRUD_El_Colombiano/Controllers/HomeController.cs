@@ -119,5 +119,22 @@ namespace CRUD_El_Colombiano.Controllers
 
             return RedirectToAction("Ver_Proyectos");
         }
+
+        [HttpGet]
+        public IActionResult EliminarProyecto(int idPersonaInt)
+        {
+            Proyecto oProyectos = _DBContext.Proyectos.Where(e => e.Codigo == idPersonaInt).FirstOrDefault();
+
+            return View(oProyectos);
+        }
+
+        [HttpPost]
+        public IActionResult EliminarProyecto(Proyecto oProyectos)
+        {
+            _DBContext.Proyectos.Remove(oProyectos);
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Ver_Proyectos");
+        }
     }
 }
