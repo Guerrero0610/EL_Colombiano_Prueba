@@ -3,6 +3,13 @@
     ViewData["Title"] = "Home Page";
 }
 
+<head>
+    <!-- Enlaces a jQuery y jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
 <div class="text-center">
     <h1 class="display-4">Bienvenido</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
@@ -18,11 +25,39 @@
 
         <form asp-controller="Home" asp-action="Index">
             <p>
-                Buscar: <input type="text" name="Buscar" class="form-text" />
+                Buscar: <input type="text" name="Buscar" id="txtBuscar" class="form-text" />
                 <input type="submit" value="Buscar" class="btn btn-sm btn-dark" />
+                <button type="button" class="btn btn-sm btn-secondary" id="btnMostrarTodo">Mostrar Todo</button>
             </p>
-
         </form>
+
+        <script>
+            // Inicializar el autocompletar usando jQuery UI Autocomplete
+            $(document).ready(function () {
+                $("#txtBuscar").autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: "/Home/Autocompletar",
+                            type: "GET",
+                            dataType: "json",
+                            data: {
+                                searchTerm: request.term
+                            },
+                            success: function (data) {
+                                response(data);
+                            }
+                        });
+                    },
+                    minLength: 3 // Número mínimo de caracteres para iniciar la búsqueda
+                });
+
+                // Evento para manejar el clic en el botón "Mostrar Todo"
+                $("#btnMostrarTodo").click(function () {
+                    window.location.href = '/Home/Index';
+                });
+            });
+        </script>
+
         <hr />
         <table class="table table-striped">
             <thead>

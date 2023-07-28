@@ -16,7 +16,7 @@ namespace CRUD_El_Colombiano.Controllers
             _DBContext = context;
         }
 
-        public IActionResult Index(String Buscar)
+        public IActionResult Index(string Buscar)
         {
             var personasInte = _DBContext.PersonasInteresadas.Include(c => c.ProyectoDeInteresNavigation).ToList();
 
@@ -26,6 +26,19 @@ namespace CRUD_El_Colombiano.Controllers
             }
 
             return View(personasInte);
+        }
+
+        [HttpGet]
+        public IActionResult Autocompletar(string BuscarNom)
+        {
+            // Realizar la lógica para obtener las sugerencias de autocompletado desde la base de datos
+            // Se usa LINQ para filtrar los resultados según el término de búsqueda
+            var sugerencias = _DBContext.PersonasInteresadas
+                .Where(s => s.Nombre != null && s.Nombre.Contains(BuscarNom))
+                .Select(s => s.Nombre)
+                .ToList();
+
+            return Json(sugerencias);
         }
 
         [HttpGet]
