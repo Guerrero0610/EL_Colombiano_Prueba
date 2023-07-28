@@ -117,7 +117,7 @@ namespace CRUD_El_Colombiano.Controllers
 
             _DBContext.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Ver_Proyectos");
         }
     }
 }
