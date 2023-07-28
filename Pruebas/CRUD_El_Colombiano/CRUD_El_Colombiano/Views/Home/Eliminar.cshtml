@@ -1,0 +1,58 @@
+﻿@model CRUD_El_Colombiano.Models.PersonasInteresada
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">¿Esta seguro de eliminar la información?</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4">
+
+        <form asp-action="PersonaInteDetalle" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Nombre">Nombre Completo</label>
+                <input class="form-control form-control-sm" asp-for="Nombre" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Apellido">Apellido Completo</label>
+                <input class="form-control form-control-sm" asp-for="Apellido" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="CorreoElectronico">Correo</label>
+                <input class="form-control form-control-sm" asp-for="CorreoElectronico" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="NumeroTelefono">Numero de Telefono</label>
+                <input class="form-control form-control-sm" asp-for="NumeroTelefono" type="text" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="ProyectoDeInteres">Proyecto de Interes</label>
+                
+            </div>
+
+            <div class="mb-2">
+
+                @if (Model.oPersona.Id == 0)
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Crear</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Actualizar</button>
+                }
+
+                <a class="btn btn-dark btn-sm" asp-action="Index" asp-controller="Home">Volver</a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
