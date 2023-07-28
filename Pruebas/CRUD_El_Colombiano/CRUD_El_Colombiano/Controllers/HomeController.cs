@@ -69,5 +69,14 @@ namespace CRUD_El_Colombiano.Controllers
 
             return View(oPersona);
         }
+
+        [HttpPost]
+        public IActionResult Eliminar(PersonasInteresada oPersona)
+        {
+            _DBContext.PersonasInteresadas.Remove(oPersona);    
+            _DBContext.SaveChanges(); 
+            
+            return View(oPersona);
+        }
     }
 }
