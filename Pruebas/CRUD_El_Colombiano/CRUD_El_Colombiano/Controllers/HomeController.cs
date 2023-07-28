@@ -78,5 +78,12 @@ namespace CRUD_El_Colombiano.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public IActionResult Ver_Proyectos()
+        {
+            List<Proyecto> Lista = _DBContext.Proyectos.ToList();
+            return View(Lista);
+        }
     }
 }
