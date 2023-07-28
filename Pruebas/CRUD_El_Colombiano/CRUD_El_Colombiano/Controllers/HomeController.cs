@@ -74,9 +74,9 @@ namespace CRUD_El_Colombiano.Controllers
         public IActionResult Eliminar(PersonasInteresada oPersona)
         {
             _DBContext.PersonasInteresadas.Remove(oPersona);    
-            _DBContext.SaveChanges(); 
-            
-            return View(oPersona);
+            _DBContext.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
