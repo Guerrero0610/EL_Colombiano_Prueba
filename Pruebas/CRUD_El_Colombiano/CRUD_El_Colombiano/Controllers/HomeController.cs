@@ -18,17 +18,14 @@ namespace CRUD_El_Colombiano.Controllers
 
         public IActionResult Index(String Buscar)
         {
-            var PersonasInte = from PersonasInteresada in _DBContext.PersonasInteresadas select PersonasInteresada;
+            var personasInte = _DBContext.PersonasInteresadas.Include(c => c.ProyectoDeInteresNavigation).ToList();
 
             if (!String.IsNullOrEmpty(Buscar))
             {
-                PersonasInte = PersonasInte.Where(s => s.Nombre!.Contains(Buscar));
-
-                return View(PersonasInte);
+                personasInte = personasInte.Where(s => s.Nombre != null && s.Nombre.Contains(Buscar)).ToList();
             }
 
-            List<PersonasInteresada> Lista = _DBContext.PersonasInteresadas.Include(c => c.ProyectoDeInteresNavigation).ToList();
-            return View(Lista);
+            return View(personasInte);
         }
 
         [HttpGet]
