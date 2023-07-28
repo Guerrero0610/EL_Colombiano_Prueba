@@ -89,25 +89,18 @@ namespace CRUD_El_Colombiano.Controllers
         [HttpGet]
         public IActionResult ProyectoInteDetalle(int idPersonaInt)
         {
-            ClienteVM oPersonaVM = new ClienteVM()
+            ProyectoVM oProyectoVM = new ProyectoVM()
             {
-                oPersona = new PersonasInteresada(),
-                oLista = _DBContext.Proyectos.Select(proyec => new SelectListItem()
-                {
-                    Text = proyec.Codigo.ToString(),
-                    Value = proyec.Codigo.ToString()
-
-                }).ToList()
-
+                oProyecto = new Proyecto()                
             };
 
             if (idPersonaInt != 0)
             {
-                oPersonaVM.oPersona = _DBContext.PersonasInteresadas.Find(idPersonaInt);
+                oProyectoVM.oProyecto = _DBContext.Proyectos.Find(idPersonaInt);
             }
 
 
-            return View(oPersonaVM);
+            return View(oProyectoVM);
         }
 
         [HttpPost]
