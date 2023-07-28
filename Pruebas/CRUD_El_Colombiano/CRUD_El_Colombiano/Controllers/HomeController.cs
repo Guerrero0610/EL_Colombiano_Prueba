@@ -29,7 +29,7 @@ namespace CRUD_El_Colombiano.Controllers
                 oPersona = new PersonasInteresada(),
                 oLista = _DBContext.Proyectos.Select(proyec => new SelectListItem()
                 {
-                    Text = proyec.Constructora,
+                    Text = proyec.Codigo.ToString(),
                     Value = proyec.Codigo.ToString()
 
                 }).ToList()
