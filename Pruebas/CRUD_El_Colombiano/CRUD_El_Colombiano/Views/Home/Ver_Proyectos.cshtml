@@ -1,8 +1,42 @@
-﻿@model CRUD_El_Colombiano.Models.Proyecto
+﻿@model List<CRUD_El_Colombiano.Models.Proyecto>
 @{
     ViewData["Title"] = "Ver_Proyectos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Ver_Proyectos</h1>
+<h1>Proyectos Disponibles</h1>
+<div class="card">
+    <div class="card-header">
+        <h5>Lista de Personas Insteresadas</h5>
+    </div>
+    <div class="card-body">
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Constructora</th>
+                    <th>Contacto</th>   
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellido</td>
+                        <td>@item.CorreoElectronico</td>
+                        <td>@item.NumeroTelefono</td>
+                        <td>@item.ProyectoDeInteres</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
 
+    </div>
+</div>
