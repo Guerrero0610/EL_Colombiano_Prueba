@@ -15,13 +15,14 @@
     <div class="card-body">
         <a class="btn btn-success btn-sm" asp-action="PersonaInteDetalle" asp-controller="Home" asp-route-idPersonaInt="0">Nuevo</a>
         <a class="btn btn-success btn-sm" asp-action="Ver_Proyectos" asp-controller="Home" asp-route-idPersonaInt="0">Ver Proyectos Disponibles</a>
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <a class="navbar-brand"></a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-        </nav>
+
+        <form asp-controller="PersonasInteresada" asp-action="Index">
+            <p>
+                Buscar: <input type="text" name="buscar" class="form-text" />
+                <input type="submit" value="Buscar" class="btn btn-sm btn-dark" />
+            </p>
+
+        </form>
         <hr />
         <table class="table table-striped">
             <thead>

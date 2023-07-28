@@ -16,8 +16,17 @@ namespace CRUD_El_Colombiano.Controllers
             _DBContext = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(String Buscar)
         {
+            var PersonasInte = from PersonasInteresada in _DBContext.PersonasInteresadas select PersonasInteresada;
+
+            if (!String.IsNullOrEmpty(Buscar))
+            {
+                PersonasInte = PersonasInte.Where(s => s.Nombre!.Contains(Buscar));
+
+                return View(PersonasInte);
+            }
+
             List<PersonasInteresada> Lista = _DBContext.PersonasInteresadas.Include(c => c.ProyectoDeInteresNavigation).ToList();
             return View(Lista);
         }
@@ -137,5 +146,7 @@ namespace CRUD_El_Colombiano.Controllers
 
             return RedirectToAction("Ver_Proyectos", "Home");
         }
+
+        
     }
 }
