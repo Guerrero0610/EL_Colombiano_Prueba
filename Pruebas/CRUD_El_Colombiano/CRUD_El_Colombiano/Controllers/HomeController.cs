@@ -65,15 +65,15 @@ namespace CRUD_El_Colombiano.Controllers
         [HttpGet]
         public IActionResult Eliminar(int idPersonaInt)
         {
-            PersonasInteresada oPersona = _DBContext.PersonasInteresadas.Include(c => c.ProyectoDeInteresNavigation).Where(e => e.Id == idPersonaInt).FirstOrDefault();   
+            PersonasInteresada oPersonas = _DBContext.PersonasInteresadas.Include(c => c.ProyectoDeInteresNavigation).Where(e => e.Id == idPersonaInt).FirstOrDefault();   
 
-            return View(oPersona);
+            return View(oPersonas);
         }
 
         [HttpPost]
-        public IActionResult Eliminar(PersonasInteresada oPersona)
+        public IActionResult Eliminar(PersonasInteresada oPersonas)
         {
-            _DBContext.PersonasInteresadas.Remove(oPersona);    
+            _DBContext.PersonasInteresadas.Remove(oPersonas);    
             _DBContext.SaveChanges();
 
             return RedirectToAction("Index", "Home");
