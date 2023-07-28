@@ -61,5 +61,13 @@ namespace CRUD_El_Colombiano.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public IActionResult Eliminar(int idPersonaInt)
+        {
+            PersonasInteresada oPersona = _DBContext.PersonasInteresadas.Include(c => c.ProyectoDeInteresNavigation).Where(e => e.Id == idPersonaInt).FirstOrDefault();   
+
+            return View(oPersona);
+        }
     }
 }
