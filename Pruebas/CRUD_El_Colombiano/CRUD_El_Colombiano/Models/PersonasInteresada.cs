@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CRUD_El_Colombiano.Models;
 
-public partial class PersonasInteresada
+public class PersonasInteresada: ValidationAttribute
 {
     public int Id { get; set; }
 

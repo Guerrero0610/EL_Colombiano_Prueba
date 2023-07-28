@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 @if(Model.oPersona.Id == 0)
 {
     <h1>Crear Persona Interesada</h1>
@@ -18,6 +20,7 @@ else
 
         <form asp-action="PersonaInteDetalle" asp-controller="Home" method="post">
             <input type="hidden" asp-for="oPersona.Id" />
+
 
             <div class="mb-2">
                 <label class="form-label" asp-for="oPersona.Nombre">Nombre Completo</label>
