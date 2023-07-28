@@ -91,7 +91,8 @@ namespace CRUD_El_Colombiano.Controllers
         {
             ProyectoVM oProyectoVM = new ProyectoVM()
             {
-                oProyecto = new Proyecto()                
+                oProyecto = new Proyecto()
+                
             };
 
             if (idPersonaInt != 0)

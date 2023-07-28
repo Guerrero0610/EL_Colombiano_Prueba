@@ -17,12 +17,7 @@ else
     <div class="col-sm-4">
 
         <form asp-action="ProyectoInteDetalle" asp-controller="Home" method="post">
-            <input type="hidden" asp-for="oProyecto.Codigo" />
-
-            <div class="mb-2">
-                <label class="form-label" asp-for="oProyecto.Codigo">Codigo</label>
-                <input class="form-control form-control-sm" asp-for="oProyecto.Codigo" type="text" />
-            </div>
+            <input type="hidden" asp-for="oProyecto.Codigo" />    
 
             <div class="mb-2">
                 <label class="form-label" asp-for="oProyecto.Nombre">Nombre Completo</label>
@@ -35,7 +30,7 @@ else
             </div>
 
             <div class="mb-2">
-                <label class="form-label" asp-for="oProyecto.Constructora">Nombre de la Constructora</label>
+                <label class="form-label" asp-for="oProyecto.Constructora">Constructora</label>
                 <input class="form-control form-control-sm" asp-for="oProyecto.Constructora" type="text" />
             </div>
 
