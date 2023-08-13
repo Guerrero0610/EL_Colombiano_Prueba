@@ -28,7 +28,7 @@ namespace CRUD_El_Colombiano.Controllers
             return View(personasInte);
         }
 
-
+        // Suggestions intento Accion
 
         [HttpGet]
         public IActionResult Suggestions(string term)

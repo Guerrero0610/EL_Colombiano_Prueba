@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Se estable la conexion con la base de datos
+
 builder.Services.AddDbContext<BdproyectosContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL"))
 );
